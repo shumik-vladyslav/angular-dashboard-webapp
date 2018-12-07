@@ -1,21 +1,95 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="main-wrap" (window:resize)="onResize()">
+  <div class="example-container">
+    <div class="side-content-wrap">
+      <button class="header-button header-button-mobile" type="button" mat-button (click)="menuOpen = !menuOpen; menuOpenFixed = !menuOpenFixed">
+        <i class="material-icons">
+          menu
+        </i>
+      </button>
+      <div class="side-menu" (mouseenter)="menuOpenFixed ? '' : (menuOpen = !true)" (mouseleave)="menuOpenFixed ? '' : (menuOpen = !false)"
+        [ngClass]="{'active': menuOpen === true}">
 
-<router-outlet></router-outlet>
+        <div class="menu-header">
+          <span *ngIf="menuOpen !== true" class="fs-20 fw-600">
+            Company Name
+          </span>
+        </div>
+        <div [ngClass]="{'p-0': menuOpen === true}" class="p-l-10 menu-list" fxLayout="column" fxLayoutGap="10px">
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              home
+            </i>
+            <span class="fs-14">
+              Dashboard
+            </span>
+          </div>
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              local_grocery_store
+            </i>
+            <span class="fs-14">
+              Orders
+            </span>
+          </div>
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              assignment
+            </i>
+            <span class="fs-14">
+              Product
+            </span>
+          </div>
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              assignment
+            </i>
+            <span class="fs-14">
+              Inventory
+            </span>
+          </div>
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              assignment
+            </i>
+            <span class="fs-14">
+              Reports
+            </span>
+          </div>
+          <div class="p-l-10 menu-item" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <i class="material-icons fs-30">
+              assignment
+            </i>
+            <span class="fs-14">
+              Setting
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <mat-toolbar class="header" fxLayout="row" fxLayoutAlign="end center">
+        <div>
+          <button class="header-button" mat-button [matMenuTriggerFor]="menu">
+            <span>
+                Username
+            </span>
+            <i class="material-icons fs-30 m-l-10">
+              account_circle
+            </i>
+          </button>
+          <mat-menu #menu="matMenu">
+            <div fxLayout="column" fxLayoutGap="10px">
+              <button mat-menu-item>My Account</button>
+              <button mat-menu-item>Logout</button>
+            </div>
+          </mat-menu>
+        </div>
+      </mat-toolbar>
+
+      <div class="main-content-wrap">
+        <router-outlet></router-outlet>
+      </div>
+
+  </div>
+
+</div>

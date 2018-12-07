@@ -1,0 +1,155 @@
+@import "../assets/scss/mixins/_breakpoints.scss";
+
+.main-wrap{
+    min-height: 100vh;
+    background: #fafafa;
+    height: 100%;
+}
+.main-content-wrap{
+    margin: 10px 20px;
+}
+.bg{
+    // background-image: url(https://phototour.pro/kcfinder/upload/images/Ladakh_Air/Air_Ladakh_2015_21.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+}
+.example-sidenav{
+    min-width: 250px;
+    box-shadow: 2px 0px 7px 4px #00000063;
+}
+.side-content{
+    background: rgba(255, 255, 255, 0.74);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1111111111;
+}
+.menu-item{
+    padding: 5px;
+    color: #b8c7ce;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    min-height: 40px;
+    &.active{
+        background: #3c8dbc !important;
+        box-shadow: -5px 6px 12px -3px #00000085;
+        color: #ffffff;
+    }
+    &:hover{
+        background: #92929266;
+    }
+}
+.side-content-wrap{
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1111111111;
+    bottom: 0;
+    @include media-breakpoint('lt-md'){
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+}
+.header-button-mobile{
+    position: absolute;
+    right: -79px;
+    top: 7px;
+    @include media-breakpoint('lt-md'){
+        left: 0;
+        top: -44px;
+        right: unset;
+    }
+}
+.side-menu{
+    width: 250px;
+    background: #222d32;
+    box-shadow: 0px 0px 20px #000000a3;
+    transition: all 0.3s;
+    overflow: hidden;
+    height: 100%;
+    &.active{
+        width: 50px;
+    }
+    @include media-breakpoint('lt-md'){
+        box-shadow: 0px 17px 21px #000000a3;
+    }
+}
+.menu-list{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 64px);
+    white-space: nowrap;
+    padding-top: 5px !important;
+    /* width */
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #ffffff00; 
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(116, 116, 116, 0.534); 
+        border-radius: 10px;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(90, 90, 90, 0.534); 
+    }
+    @include media-breakpoint('xs'){
+        height: calc(100% - 50px)
+    }
+}
+.logo{
+    transition: all .3s;
+    width: 60px;
+    &.active{
+        width: 50px;
+    }
+}
+.menu-md{
+    padding: 0 13px !important;
+    min-width: 20px;
+    position: absolute;
+    right: 0;
+}
+.content-wrap{
+    transition: all 0.3s;
+    margin-left: 50px;
+    padding-top: 70px;
+    &.active{
+        margin-left: 250px;
+    }
+    &.active-mobile{
+        @include media-breakpoint('lt-md'){
+            margin-left: 50px;
+        }
+    }
+}
+.header{
+    background-color: #3c8dbc;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.menu-header{
+    background-color: #367fa9;
+    color: white;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
