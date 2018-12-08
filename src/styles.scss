@@ -2,7 +2,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './assets/scss/style.scss';
 
-
 body{
     margin: 0;
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -14,7 +13,9 @@ body{
 .fs-400{
     font-weight: 400;
 }
-
+.text-left{
+    text-align: left;
+}
 .mat-toolbar-row, .mat-toolbar-single-row{
     box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
     height: 50px !important;
@@ -30,16 +31,10 @@ body{
 .full-width{
     width: 100%;
 }
-.mat-card-actions, .mat-card-content, .mat-card-subtitle{
-    margin-bottom: 0 !important;
-    // color: white;
+.full-height{
+    height: 100%;
 }
-.mat-drawer-side{
-    border-right: none;
-}
-.mat-raised-button{
-    line-height: 24px !important;
-}
+
 .color-gray{
     color: gray;
 }
