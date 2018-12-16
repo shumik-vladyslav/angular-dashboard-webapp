@@ -9,12 +9,14 @@ import { MatButtonModule, MatInputModule, MatTabsModule, MatCardModule,MatMenuMo
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashbordComponent } from './pages/dashbord/dashbord.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashbordComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

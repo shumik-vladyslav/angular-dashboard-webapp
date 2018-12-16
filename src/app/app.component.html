@@ -1,4 +1,4 @@
-<div *ngIf="router.url !== '/login'" class="main-wrap">
+<div *ngIf="router.url !== '/login' && router.url !== '/sign-up'" class="main-wrap">
   <div class="example-container">
     <div class="side-content-wrap">
       <button class="header-button header-button-mobile" type="button" mat-button (click)="menuOpen = !menuOpen; menuOpenFixed = !menuOpenFixed">
@@ -89,5 +89,8 @@
 </div>
 
 <div *ngIf="router.url === '/login'" class="full-height">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="router.url === '/sign-up'" class="full-height">
   <router-outlet></router-outlet>
 </div>
